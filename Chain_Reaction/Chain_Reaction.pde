@@ -30,12 +30,12 @@ void draw() {
     drawCircle(b);
 
     // handle state changes
-    if (b.state == 1) {
+    if (b.state == 1) { // state 1: ball increases until it reaches or surpasses max radius
       b.rad+=dRAD;
-      if (b.rad > MAX_RAD) {
+      if (b.rad > MAX_RAD) { //if radius is greater than the biggest radius, ball shrinks
         b.state = 2;
       }
-    } else if (b.state == 2 && b.rad > 0) {
+    } else if (b.state == 2 && b.rad > 0) { //ball shrinks until radius is less than dRAD
       b.rad-=dRAD;
       if (b.rad >= 0 && b.rad < dRAD) {
         b.rad = 0;
